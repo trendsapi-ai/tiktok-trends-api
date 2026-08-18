@@ -1,13 +1,29 @@
 # TikTok hashtag volume API
 
-JSON hashtag-volume history and live TikTok boards via [Trends API](https://trendsapi.ai). No TikTok app, no Research API waitlist.
+TikTok hashtag and search interest trends via the Trends API. History, growth, and live trending hashtags.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![npm](https://img.shields.io/npm/v/trendsapi-tiktok.svg)](https://www.npmjs.com/package/trendsapi-tiktok)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![PyPI](https://img.shields.io/pypi/v/trendsapi-tiktok.svg)](https://pypi.org/project/trendsapi-tiktok/) [![npm](https://img.shields.io/npm/v/trendsapi-tiktok.svg)](https://www.npmjs.com/package/trendsapi-tiktok)
 
 Key: [trendsapi.ai/#get-key](https://trendsapi.ai/#get-key). Full contract: [trendsapi-ai/trendsapi](https://github.com/trendsapi-ai/trendsapi).
 
 ## Install
+
+### Python
+
+```bash
+pip install trendsapi-tiktok
+```
+
+```python
+from trendsapi_tiktok import TrendsAPI
+
+client = TrendsAPI()  # TRENDSAPI_KEY
+series = client.get_time_series("matcha")
+growth = client.get_growth("matcha", percent_growth=["12M"])
+hot = client.get_live(limit=10)
+```
+
+### JavaScript
 
 ```bash
 npm install trendsapi-tiktok
@@ -19,10 +35,9 @@ import { TrendsAPI } from "trendsapi-tiktok";
 const client = new TrendsAPI({ apiKey: process.env.TRENDSAPI_KEY });
 const series = await client.getTimeSeries("matcha");
 const growth = await client.getGrowth("matcha", { percent_growth: ["12M"] });
-const hashtags = await client.getLive({ limit: 10 });
+const live = await client.getLive({ limit: 10 });
 ```
 
-Keyword helpers default to `source: "tiktok"`. Override `source` for any other platform. Official full client: [`trendsapi`](https://www.npmjs.com/package/trendsapi).
 
 ## Call
 
@@ -31,8 +46,8 @@ Keyword helpers default to `source: "tiktok"`. Override `source` for any other p
 | Endpoint | `POST https://api.trendsapi.ai/api` |
 | Auth | `Authorization: Bearer $TRENDSAPI_KEY` |
 | History | `source: tiktok` with `get_time_series` or `get_growth` |
-| Keyword | Hashtag or topic, e.g. `matcha` (`#` optional) |
-| Live `type` | `TikTok Trending Hashtags`, `TikTok Trending Searches`, `TikTok Shop Hot Products` |
+| Keyword | Hashtag or topic, e.g. matcha (`#` optional) |
+| Live `type` | TikTok Trending Hashtags, TikTok Trending Searches, TikTok Shop Hot Products |
 
 ```bash
 curl -sS -X POST https://api.trendsapi.ai/api \
@@ -41,11 +56,13 @@ curl -sS -X POST https://api.trendsapi.ai/api \
   -d '{"mode":"get_time_series","source":"tiktok","keyword":"matcha"}'
 ```
 
-`value` is 0-100 for this hashtag, not view count. `tiktok trending hashtags` (wrong case) is 400.
+`value` is 0-100 for this hashtag, not view count.
+
+`tiktok trending hashtags` (wrong case) is 400.
 
 Publishing videos still requires TikTok's own APIs. This endpoint is demand only.
 
-Site: [trendsapi.ai/trends/tiktok-trends](https://trendsapi.ai/trends/tiktok-trends).
+Site: [https://trendsapi.ai/trends/tiktok-trends](https://trendsapi.ai/trends/tiktok-trends).
 
 ## License
 

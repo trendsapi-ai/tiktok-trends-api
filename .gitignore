@@ -4,3 +4,9 @@ node_modules/
 *.log
 .env
 .DS_Store
+__pycache__/
+*.egg-info/
+.venv/
+.pypirc
+.pytest_cache/
+.mypy_cache/
