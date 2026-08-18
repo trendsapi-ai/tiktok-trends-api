@@ -6,6 +6,11 @@ Key: [trendsapi.ai/#get-key](https://trendsapi.ai/#get-key). Contract: [trendsap
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Source](https://img.shields.io/badge/source-tiktok-black.svg)](https://trendsapi.ai/trends/tiktok-trends)
+[![npm](https://img.shields.io/npm/v/trendsapi-tiktok.svg)](https://www.npmjs.com/package/trendsapi-tiktok)
+
+```bash
+npm install trendsapi-tiktok
+```
 
 ## Call
 
