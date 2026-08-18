@@ -1,0 +1,59 @@
+{
+  "name": "trendsapi-tiktok",
+  "version": "1.0.1",
+  "description": "TikTok hashtag and search interest trends via the Trends API. History, growth, and live trending hashtags. No TikTok API approval needed.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --sourcemap --external trendsapi",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "tiktok",
+    "tiktok-trends",
+    "tiktok-api",
+    "hashtag-trends",
+    "trendsapi",
+    "typescript"
+  ],
+  "author": "Trends API <hello@trendsapi.ai>",
+  "license": "MIT",
+  "homepage": "https://trendsapi.ai",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trendsapi-ai/tiktok-trends-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/trendsapi-ai/tiktok-trends-api/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "trendsapi": "^1.0.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

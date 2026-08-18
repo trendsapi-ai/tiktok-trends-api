@@ -1,9 +1,6 @@
-__pycache__/
-*.py[cod]
-*.egg-info/
-.venv/
-venv/
+﻿dist/
 node_modules/
-dist/
+*.tgz
+*.log
 .env
 .DS_Store

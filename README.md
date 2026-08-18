@@ -2,15 +2,27 @@
 
 JSON hashtag-volume history and live TikTok boards via [Trends API](https://trendsapi.ai). No TikTok app, no Research API waitlist.
 
-Key: [trendsapi.ai/#get-key](https://trendsapi.ai/#get-key). Contract: [trendsapi-ai/trendsapi](https://github.com/trendsapi-ai/trendsapi).
-
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Source](https://img.shields.io/badge/source-tiktok-black.svg)](https://trendsapi.ai/trends/tiktok-trends)
 [![npm](https://img.shields.io/npm/v/trendsapi-tiktok.svg)](https://www.npmjs.com/package/trendsapi-tiktok)
+
+Key: [trendsapi.ai/#get-key](https://trendsapi.ai/#get-key). Full contract: [trendsapi-ai/trendsapi](https://github.com/trendsapi-ai/trendsapi).
+
+## Install
 
 ```bash
 npm install trendsapi-tiktok
 ```
+
+```ts
+import { TrendsAPI } from "trendsapi-tiktok";
+
+const client = new TrendsAPI({ apiKey: process.env.TRENDSAPI_KEY });
+const series = await client.getTimeSeries("matcha");
+const growth = await client.getGrowth("matcha", { percent_growth: ["12M"] });
+const hashtags = await client.getLive({ limit: 10 });
+```
+
+Keyword helpers default to `source: "tiktok"`. Override `source` for any other platform. Official full client: [`trendsapi`](https://www.npmjs.com/package/trendsapi).
 
 ## Call
 
@@ -27,13 +39,6 @@ curl -sS -X POST https://api.trendsapi.ai/api \
   -H "Authorization: Bearer $TRENDSAPI_KEY" \
   -H "Content-Type: application/json" \
   -d '{"mode":"get_time_series","source":"tiktok","keyword":"matcha"}'
-```
-
-```python
-from trendsapi import TrendsAPI
-client = TrendsAPI()
-series = client.get_time_series(source="tiktok", keyword="matcha")
-hashtags = client.get_top_trends(type="TikTok Trending Hashtags", limit=10)
 ```
 
 `value` is 0-100 for this hashtag, not view count. `tiktok trending hashtags` (wrong case) is 400.
