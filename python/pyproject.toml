@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trendsapi-tiktok"
-version = "1.0.1"
+version = "1.0.2"
 description = "TikTok hashtag and search interest trends via the Trends API. History, growth, and live trending hashtags."
 readme = "README.md"
 license = "MIT"

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Full contract README: methods, field tables, dataclass examples, errors.
+
 ## 1.0.1
 
 - Point repository at the trendsapi-ai GitHub org.
