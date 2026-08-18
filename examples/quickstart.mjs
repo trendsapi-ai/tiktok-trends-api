@@ -12,4 +12,6 @@ const res = await fetch("https://api.trendsapi.ai/api", {
     percent_growth: ["3M", "12M"],
   }),
 });
-console.log(await res.json());
+if (!res.ok) throw new Error(`HTTP ${res.status}`);
+const env = await res.json();
+console.log(env.statusCode === 200 ? JSON.parse(env.body) : env);

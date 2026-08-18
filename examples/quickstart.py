@@ -1,5 +1,5 @@
 """Trends API quickstart - TikTok. Get a free key at https://trendsapi.ai/#get-key"""
-import os
+import json, os
 
 import requests
 
@@ -12,7 +12,8 @@ res = requests.post(
         "keyword": "booktok",
         "percent_growth": ["3M", "12M"],
     },
-    timeout=30,
+    timeout=60,
 )
 res.raise_for_status()
-print(res.json())
+env = res.json()
+print(json.loads(env["body"]) if env.get("statusCode") == 200 else env)
