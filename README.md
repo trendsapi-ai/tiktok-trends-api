@@ -4,7 +4,7 @@ TikTok hashtag and search interest trends via the [TikTok Trends API](https://tr
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/trendsapi-tiktok.svg)](https://pypi.org/project/trendsapi-tiktok/)
-[![Python](https://img.shields.io/badge/python-3.9%2B-yellow.svg)](https://trendsapi.ai)
+[![Python](https://img.shields.io/badge/python-3.9%2B-yellow.svg)](https://trendsapi.ai/trends/tiktok-trends)
 [![npm](https://img.shields.io/npm/v/trendsapi-tiktok.svg)](https://www.npmjs.com/package/trendsapi-tiktok)
 
 Key: [trendsapi.ai/#get-key](https://trendsapi.ai/#get-key). HTTP contract and every source: [trendsapi-ai/trendsapi](https://github.com/trendsapi-ai/trendsapi).
