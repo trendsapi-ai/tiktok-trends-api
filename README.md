@@ -1,6 +1,6 @@
 # TikTok hashtag volume API
 
-TikTok hashtag and search interest trends via the Trends API. History, growth, and live trending hashtags.
+TikTok hashtag and search interest trends via the [TikTok Trends API](https://trendsapi.ai/trends/tiktok-trends). History, growth, and live trending hashtags.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/trendsapi-tiktok.svg)](https://pypi.org/project/trendsapi-tiktok/)
